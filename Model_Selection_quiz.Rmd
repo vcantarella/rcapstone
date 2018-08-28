@@ -14,6 +14,10 @@ First, let us load the data:
 
 ```{r load}
 load("ames_train.Rdata")
+library(tidyverse)
+library(MASS)
+library(statsr)
+library(broom)
 ```
 
 
@@ -129,6 +133,8 @@ Examine the residuals of a linear model.
 
 ```{r Q5}
 # type your code for Question 5 here, and Knit
+qual_lm <- lm(log(price)~Overall.Qual+Bsmt.Qual+Garage.Qual, data = ames_train)
+
 dim(ames_train)[1] - length(fitted(qual_lm))
 
 ```
